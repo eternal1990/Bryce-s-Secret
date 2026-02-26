@@ -53,6 +53,20 @@ CSV 至少包含以下列：
 - `close`
 - `volume`
 
+
+### 快速生成可用 CSV（本地自测）
+如果你还没从 MCP 导出数据，可先用仓库内脚本生成一份符合格式的 1m 数据：
+
+```bash
+python3 generate_btc_1m_ohlcv_csv.py --days 8 --out data/btc_1m_ohlcv.csv
+```
+
+再执行分析：
+
+```bash
+python3 btc_1000_et_shock.py --days 7 --input-csv data/btc_1m_ohlcv.csv --out-dir output
+```
+
 ### 分析命令
 
 ```bash
